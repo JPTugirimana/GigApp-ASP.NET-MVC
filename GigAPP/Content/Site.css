@@ -1,0 +1,252 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    font-size: 16px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.voffset { margin-top: 20px; }
+.voffset1 { margin-top: 5px; }
+.voffset2 { margin-top: 10px; }
+.voffset3 { margin-top: 20px; }
+.voffset4 { margin-top: 40px; }
+.voffset5 { margin-top: 80px; }
+
+/* CSS Overrides*/
+.popover {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    background-color: #e62c2c;
+}
+
+.navbar-inverse {
+    background-color: #F18315  ;
+    border-color: #F18315;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #fff;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #fff;
+}
+
+.navbar-inverse .notifications {
+    position: relative;
+}
+
+.navbar-inverse .notifications .badge {
+    position: absolute;
+    top:8px;
+    right: -1px;
+    background: red;
+}
+
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus {
+  color: #FAFF46;
+  background-color: transparent;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+  color: #FAFF46;
+  background-color: transparent;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: Lato, Helvetica, Arial, sans-serif;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+
+.form-control {
+    font-size: 16px;
+    padding: 5px 15px;
+    border-radius: 7px;
+}
+
+
+.form-control:focus {
+  border-color: #66afe9;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.btn {
+    font-size: 18px;
+    padding: 7px 20px;
+    border-radius: 9px;
+    margin-left: 8px;
+    height: 25px;
+    padding-top: 3px;
+}
+
+#JPAddon_Add_Gig_Title {
+    font-size: 32px;
+        margin-top: 40px;
+    margin-bottom: 25px;
+}
+
+.dropdown-menu {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.navbar-inverse .navbar-nav > .dropdown > a .caret {
+    border-top-color: #ffffff;
+    border-bottom-color: #ffffff;
+}
+
+.navbar-brand {
+  font-weight: 700;
+}
+
+span.field-validation-error {
+    color: red;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/* Add Gig Page-level styles*/
+.gigs {
+    margin-top: 50px;
+    list-style: none;
+}
+
+.gigs > li {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.gigs > li .details {
+    position: absolute;
+    top: 0;
+    left: 70px;
+    width: 200px;
+}
+
+.gigs > li .date {
+    width: 60px;
+    background: red;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.gigs > li .date .month{
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 2px 6px;
+}
+
+.gigs > li .date .day{
+    background: white;
+    color: #808080;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 6px 12px;
+}
+
+.gigs > li .details .artist {
+    font-weight: bold;
+    display: block;
+}
+
+.gigs > li .actions {
+    font-size: 15px;
+    display: none;
+}
+
+
+.gigs > li:hover .actions {
+    display: block;
+}
+
+.btn {
+    font-size: 12px;
+  /*  padding: 7px 20px;*/
+    border-radius: 9px;
+}
+
+/* List Artists Page-level styles*/
+.artists {
+    margin-top: 30px;
+    /*list-style: none;*/
+    font-weight: bold;
+}
+
+.artists > li {
+    margin-bottom: 20px;
+    font-size: 20px;
+    width: 200px;
+}
+
+/* for the code below, You can use LESS to have a better css file 
+    With visible Hierachies and avoiding repeating parent class names.
+*/
+
+ul.notifications {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul.notifications > li {
+    border-bottom: 1px solid #808080;
+    padding: 10px 0;
+}
+
+ul.notifications > li:last-child  {
+    border-bottom: none;
+}
+
+ul.notifications .highlight {
+    font-weight: bolder;
+}
+
+#searchGigs {
+    width: 300px;
+    box-shadow: none;
+}
+
+#searchGigs:focus {
+    box-shadow: none;
+}

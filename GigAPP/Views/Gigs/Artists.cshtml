@@ -1,0 +1,18 @@
+﻿@model IEnumerable<GigAPP.Models.Following>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Artists: </h2>
+
+<ol class="artists">
+    @foreach (var a in Model)
+    {
+        <li>
+            @a.Followee.Name
+        </li>
+    }
+</ol>
+

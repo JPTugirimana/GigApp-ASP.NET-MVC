@@ -1,0 +1,29 @@
+﻿@model IEnumerable<GigAPP.Models.Gig>
+
+@{
+    ViewBag.Title = "AllMine";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>All my Gigs in the database</h2>
+<h4>Including the ones i cancelled and in the past</h4>
+
+<ul class="gigs voffset4">
+    @foreach (var gig in Model)
+    {
+        <li>
+            <div class="date">
+                <div class="month">@gig.DateTime.ToString("MMM")</div>
+                <div class="day">@gig.DateTime.ToString("d ")</div>
+            </div>
+            <div class="details">
+                <span class="artist">
+                    @gig.Venue
+                </span>
+                <span class="genre">
+                    @gig.Genre.Name
+                </span>
+            </div>
+        </li>
+    }
+</ul>

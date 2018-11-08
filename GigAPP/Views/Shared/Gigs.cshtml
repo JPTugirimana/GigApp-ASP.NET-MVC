@@ -1,0 +1,89 @@
+﻿@model GigAPP.ViewModels.GigsViewModel
+
+@{
+    ViewBag.Title = "JPHome Page";
+}
+
+<h1>@Model.Heading</h1>
+
+@using (Html.BeginForm("Search", "Gigs"))
+{
+    <div class="form-group">
+        <div id="searchGigs"class="input-group">
+            @Html.TextBoxFor(m => m.SearchTerm, new { @class = "form-control", placeholder = "search by artist, genre,..." })
+            <span class="input-group-addon">
+                <i class="glyphicon glyphicon-search" ></i>
+            </span>
+        </div>    
+    </div>
+}
+
+<ul class="gigs voffset4">
+    @foreach(var gig in Model.UpcomingGigs )
+    {
+        <li>
+            <div class="date">
+                <div class="month">@gig.DateTime.ToString("MMM")</div>
+                <div class="day">@gig.DateTime.ToString("d ")</div>
+            </div>
+            <div class="details">
+                <span class="artist">
+                    <a href="@Url.Action("Details", "Gigs", new {id = gig.Id})">
+                        @gig.Artist.Name
+                    </a>
+
+                    @if (gig.IsCanceled)
+                    {
+                        <span class="label label-warning">Canceled</span>
+                    }
+
+                    @if (Model.ShowActions && (gig.ArtistId != Model.CurrentUser))
+                    {
+                        if (Model.Followings.Contains(gig.ArtistId))
+                        {
+                            <button data-user-id="@gig.ArtistId"
+                                    class="btn btn-success btn-sm pull-right js-toggle-following">
+                                Following
+                            </button>
+                        }
+                        else
+                        {
+                            <button data-user-id="@gig.ArtistId" 
+                                    class="btn btn-link btn-sm pull-right js-toggle-following">
+                                Follow?
+                            </button>
+                       }
+
+                    }
+                </span>
+                <span class="genre">@gig.Genre.Name</span>
+                    @if (Model.ShowActions && !gig.IsCanceled && (gig.ArtistId != Model.CurrentUser))
+                    {
+                        if (Model.Attendances.Contains(gig.Id))
+                        {
+                            <button data-gig-id="@gig.Id" 
+                                    class="btn btn-info btn-sm pull-right js-toggle-attendance">
+                                Going
+                            </button>
+                        }
+                        else
+                        {
+                            <button data-gig-id="@gig.Id"
+                                    class="btn btn-default btn-sm pull-right js-toggle-attendance">
+                                Going?
+                            </button>
+                        }
+                    }
+            </div>
+
+        </li>
+    }
+</ul>
+@section scripts {
+    <script>
+        $(document).ready(function () {            
+            AttendanceController.init();
+            FollowingController.init();   
+        });
+    </script>
+}
